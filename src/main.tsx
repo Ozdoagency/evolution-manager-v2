@@ -13,6 +13,8 @@ import { queryClient } from "./lib/queries/react-query.ts";
 import router from "./routes/index.tsx";
 import i18n from "./translate/i18n";
 
+console.log('API URL:', import.meta.env.VITE_EVOLUTION_API_URL);
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <I18nextProvider i18n={i18n}>
