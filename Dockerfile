@@ -21,6 +21,14 @@ COPY index.html ./
 COPY components.json ./
 COPY public/ ./public/
 
+# Add ARGs for build time
+ARG VITE_EVOLUTION_API_URL
+ARG VITE_EVOLUTION_API_KEY
+ARG VITE_APP_NAME
+ENV VITE_EVOLUTION_API_URL=$VITE_EVOLUTION_API_URL
+ENV VITE_EVOLUTION_API_KEY=$VITE_EVOLUTION_API_KEY
+ENV VITE_APP_NAME=$VITE_APP_NAME
+
 # Build the application
 RUN echo "Iniciando build..." && \
     npm run build && \
